@@ -7,6 +7,10 @@ import logging
 logging.basicConfig(filename='example.log', filemode='w', level=logging.DEBUG)
 con = psycopg2.connect(database="winback", user="winback", password="winback", host="localhost", port="5432")
 
+# ein logging gibt gezielter Aufschluss über das was Programm macht als print Befehle. Durch die log level prod, dev, info kann
+# konfiguriert werden, wie geschwätzig ein logging ist. Auf dev Maschinen ist meistens dev (hier z.B: logging.dev("Ich bin ein develeopemt logging") konfigurieret, damit die Entwickler viele Informationen von
+# der Anwendung erhalten. Auf prod ist es meist info (hier z.B: logging.info("Ich bin ein prod/validation logging"), wo nur wichtige geschäftsrelevante Inhalte in das logfile geschrieben werden. Dieses Skript schreibt
+# das file example.log.
 
 #print("Database opened successfully")
 logging.info("datase opend successfully")
